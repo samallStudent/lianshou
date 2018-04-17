@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="悦野后台管理">
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name='apple-itunes-app' content='app-id=1185238261'>
+  <meta name="description" content="" />
+  <meta name="author" content="悦野健康科技有限公司" />
+  <title>悦野后台主播管理查询....</title>
+  <link rel="stylesheet" href="css/normal.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/laydate.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- 这是首页 -->
+    <div class="author-manage-content">
+      <h2>直播数据</h2>
+      <div class="top-tab" id="dataTab">
+        <a href="javascript:void(0);" class="tab-selected" data-tab="one" data-type="1">记录查询</a>
+        <a href="javascript:void(0);" data-tab="second" data-type="2">数据统计</a>
+      </div>
+      <div id="tab-content">
+        <div class="tab-item tab-one">
+          <!-- <h2>this is tab one</h2> -->
+          <div class="tab-filtrates">
+            <ul>
+              <li class="fl tab-filtrate-item" style="width:140px;">
+                <div class="i-auchor">
+                  <a class="i-select-btn" data-target="select-auchor" href="javascript:void(0);"><span id="auchor-txt" data-aid="">选择主播主播</span><span class="i-select-icon"></span></a>
+                  <ul id="select-auchor" class="a-selectlist">
+                  </ul>
+                </div>
+              </li>
+              <li class="fl tab-filtrate-item">
+                <div class="a-month">
+                  <a href="javascript:void(0);" class="a-selectlist-btn" id="curMonth" data-num="1">本月</a>
+                </div>
+              </li>
+              <li class="fl tab-filtrate-item">
+                <div class="a-month">
+                  <a href="javascript:void(0);" class="a-selectlist-btn" id="preMonth" data-num="2">上月</a>
+                </div>
+              </li>
+              <li class="fl tab-filtrate-item">
+                <div class="i-monthlimit">
+                  <a class="fl i-select-btn" data-target="date-range" href="javascript:void(0);">
+                  <input id="txtBeginDate"  placeholder="起始时间" /><span class="i-select-icon"></span></a>
+                  <a class="fl i-select-btn" data-target="date-range" href="javascript:void(0);"><input id="txtEndDate" placeholder="结束时间" /><span class="i-select-icon"></span></a>
+                </div>
+              </li>
+              <li class="fr tab-filtrate-item">
+                <a id="excelRxportBtn" class="excel-btn" download="悦野主播数据统计表.xlsx" href="javascript:void(0);" onclick="return ExcellentExport.excel(this, 'tbody-one', '悦野主播数据统计表');">导出Excel</a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-table">
+            <table id="tbody-one">
+              <thead>
+                <tr class="t-tit">
+                  <th><div class="a-nick">主播昵称</div></th>
+                  <th><div class="a-id">主播ID</div></th>
+                  <th><div class="a-time">直播时长</div></th>
+                  <th><div class="a-start">开始时间</div></th>
+                  <th><div class="a-end">结束时间</div></th>
+                  <th><div class="a-ticket">悦票</div></th>
+                </tr>
+              </thead>
+              <tbody id="tbody-result-one"></tbody>
+            </table>
+            <div id="pagin-box" class="fr pages"></div>
+          </div>
+        </div>
+        <div class="tab-item tab-second">
+          <div class="tab-filtrates">
+            <ul>
+              <li class="fl tab-filtrate-item">
+                <div class="a-month" style="border-left: 1px solid #D7D7D7;">
+                  <a href="javascript:void(0);" class="a-selectlist-btn" id="monthPre">上月</a>
+                </div>
+              </li>
+              <li class="fl tab-filtrate-item">
+                <div class="i-monthlimit i-monthrange">
+                  <a class="fl i-select-btn" data-target="select-month" href="javascript:void(0);">
+                  <input id="monthDate" placeholder="选择月份" /><span class="i-select-icon"></span></a>
+                  <ul id="select-month" class="a-selectlist selected-month">
+                  </ul>
+                </div>
+              </li>
+              <li class="fr tab-filtrate-item">
+                <a id="excelRxport" class="excel-btn" download="悦野主播数据统计表.xlsx" href="javascript:void(0);" onclick="return ExcellentExport.excel(this, 'tbody-second', '悦野主播数据统计表');" >导出Excel</a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-table">
+            <table id="tbody-second">
+              <thead>
+                <tr class="t-tit">
+                  <th width="295"><div class="a-dnick">主播昵称</div></th>
+                  <th width="261"><div class="a-did">主播ID</div></th>
+                  <th width="276"><div class="a-dtime">直播时长</div></th>
+                  <th width="235"><div class="a-dticket">悦票</div></th>
+                  <th width="129"><div class="a-dstatus">状态</div></th>
+                </tr>
+              </thead>
+              <tbody id="tbody-result-second"></tbody>
+            </table>
+            <div id="pagin-box" class="fr pages"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./js/jquery.min.js"></script>
+<!-- 页码插件 -->
+<script src="./js/jquery.pagination.js"></script>
+<!-- 日期插件  -->
+<script src="./js/laydate.js"></script>
+<!-- 导出表格插件 -->
+<script src="./js/excellentexport.min.js"></script>
+<script src="./js/main.js"></script>
+</html>

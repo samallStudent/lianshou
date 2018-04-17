@@ -1,0 +1,48 @@
+/*reset*/
+html{-webkit-text-size-adjust: none;-moz-text-size-adjust: none;-ms-text-size-adjust: none;text-size-adjust: none;}
+/*reset*/
+html{zoom:1;}
+html *{outline:0;zoom:1;}
+html button::-moz-focus-inner{border-color: transparent !important; }
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, figure, section, legend, textarea, p, blockquote, th, td, input, select, textarea, button { margin: 0; padding: 0 }
+fieldset, img { border: 0 none }
+body{font:14px/1.4 "Microsoft Yahei",Arial,Helvetica,sans-serif;background-color: #fff;color:#333;margin: 0 auto;-webkit-overflow-scrolling: touch;/*font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;*/}
+html, body { height: 100%;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight: normal;}
+table{border-collapse:collapse;border-spacing:0}
+ul,ol,dd,dt,dl{list-style-type:none;}
+li{list-style:none;}
+caption, th {text-align: left; }
+a{color:inherit;outline: none; text-decoration: none;-webkit-touch-callout: none;-webkit-user-select: none;}
+a:hover {text-decoration:none;}
+
+a,a:hover,a:active,a:visited,a:link,a:focus{-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-tap-highlight-color: transparent;
+    outline:none;background: none;text-decoration: none;-webkit-appearance: none;-moz-appearance: none;-webkit-border-radius: 0;-webkit-user-select: none;-moz-user-focus: none;-moz-user-select: none;}
+input,select{-webkit-tap-highlight-color: transparent;-webkit-appearance: none;-moz-appearance: none;-webkit-border-radius: 0;}
+fieldset,input,a img{border:0;}
+i,em{font-style:normal;}
+:focus{outline: none}
+select{ background: none }
+address, caption, cite, code, dfn, em, th, var，i {font-style: normal;font-weight: normal; }
+input[type="submit"], input[type="reset"], input[type="button"], input[type=date], button, select, input[type=text] {
+  /*去掉苹果的默认UI来渲染按钮 、解决部分手机浏览器对border：none无效办法*/
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /*去掉微信端input-text在ios轻快下的点击出先黑色半透明背景*/
+  tap-highlight-color: transparent !important; }
+a, input[type=text], select, input[type=password], textarea {
+  /*去掉微信端input-text在ios轻快下的点击出先黑色半透明背景*/
+  tap-highlight-color: transparent !important; }
+/*原子类*/
+.clearfix { clear: both; }
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; height: 0; overflow: hidden; }
+.fl { float: left; }
+.fr { float: right; }
+.mb10{margin-bottom: 10px;}
+.mt10{margin-top: 10px;}
+/*placeholder css*/
+::-moz-placeholder{ font-family: "Microsoft YaHei";} 
+::-webkit-input-placeholder{ font-family: "Microsoft YaHei";} 
+:-ms-input-placeholder{ font-family: "Microsoft YaHei";}
